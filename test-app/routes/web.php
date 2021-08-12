@@ -22,6 +22,9 @@ Route::get('/home', function () {
 });
 
 Route::get('/test', function () {
-    return view('test');
+    return view('test', [
+        'name' => 'Mohammad Ricko Aprilianto',
+        'Github' => 'rickosong'
+    ]);
 });
 
