@@ -7,7 +7,7 @@
     <title>About</title>
 </head>
 <body>
-    <h1><?php echo $name; ?></h1>
-    <p><?php echo $Github; ?></p>
+    <h1>{{ $name }}</h1>
+    <p>{{ $Github }} </p>
 </body>
 </html>
