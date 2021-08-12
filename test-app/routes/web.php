@@ -18,13 +18,16 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('home');
+    return view('home', [
+        'title' => 'home'
+    ]);
 });
 
 Route::get('/test', function () {
     return view('test', [
         'name' => 'Mohammad Ricko Aprilianto',
-        'Github' => 'rickosong'
+        'Github' => 'rickosong',
+        'title' => 'about'
     ]);
 });
 
