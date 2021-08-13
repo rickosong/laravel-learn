@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,22 +34,9 @@ Route::get('/test', function () {
 
 
 Route::get('/post', function () {
-    $blog_post = [
-        [
-            'title' => 'Post pertama',
-            'author' => 'Ricko',
-            'isi' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia non dolore maiores ad cumque facilis voluptatem inventore laborum itaque quo eligendi nostrum, numquam atque harum, explicabo soluta consequuntur hic dolorem.'
-        ],
-
-        [
-            'title' => 'Post kedua',
-            'author' => 'Mohammad',
-            'isi' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia non dolore maiores ad cumque facilis voluptatem inventore laborum itaque quo eligendi nostrum, numquam atque harum, explicabo soluta consequuntur hic dolorem.'
-        ],
-    ];
-
     return view('post', [
         'title' => 'home',
-        'posts' => $blog_post
+        // untuk array yg index name posts, berisi model Post yg isinya adalah method all()
+        'posts' => Post::all()
     ]);
 });
