@@ -1,5 +1,6 @@
 <?php
-
+// untuk menambahkan controller
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 
@@ -32,11 +33,5 @@ Route::get('/test', function () {
     ]);
 });
 
-
-Route::get('/post', function () {
-    return view('post', [
-        'title' => 'home',
-        // untuk array yg index name posts, berisi model Post yg isinya adalah method all()
-        'posts' => Post::all()
-    ]);
-});
+// memanggil array yg ada di post controller yg ada di dalam folder controller
+Route::get('/post', [PostController::class, 'index']);
