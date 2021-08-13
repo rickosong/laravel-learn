@@ -34,3 +34,6 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users');
     }
 }
+
+// gunakan rollback untuk menghapus
+// gunakan fresh untuk menghapus lalu menambah sekaligus
