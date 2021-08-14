@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChoicesTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateChoicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('choices', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('choice', 191);
-            // $table->foreign('poll_id')->unsigned();
+            $table->string('username', 191);
+            $table->string('password', 191);
+            $table->string('role', 191);
             $table->timestamps();
+            $table->foreignId('division_id')->constrained('divisions');
         });
     }
 
@@ -28,6 +30,6 @@ class CreateChoicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('choices');
+        Schema::dropIfExists('users');
     }
 }
