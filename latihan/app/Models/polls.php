@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class polls extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title', 'description', 'deadline', 'created_by', ];
 }
