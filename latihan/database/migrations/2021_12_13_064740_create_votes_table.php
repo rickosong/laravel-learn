@@ -15,11 +15,11 @@ class CreateVotesTable extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            // $table->foreign('choice_id')->references('id')->on('choices');
-            // $table->foreign('user_id')->references('id')->on('users');
-            // $table->foreign()->references('')->on();
+            $table->foreignId('choice_id')->constrained('choices');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('poll_id')->constrained('polls');
             $table->timestamps();
-            // $table->foreign('division_id')->references('id')->on('divisions');
+            $table->foreignId('division_id')->constrained('divisions');
         });
     }
 
