@@ -18,6 +18,7 @@ class CreatePollsTable extends Migration
             $table->string('title',191);
             $table->text('Descriptions');
             $table->datetime('deadline');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
             // $table->timestamp('deleted_at');
         });
